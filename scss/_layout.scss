@@ -1,0 +1,84 @@
+// Basic setting
+@mixin left {float: left;}
+@mixin right {float: right;}
+@mixin clear {@include clearfix;}
+@mixin none {display: none;}
+@mixin block {display: block;}
+
+@mixin bold {font-weight: bold;}
+@mixin normal {font-weight: normal;}
+@mixin light {font-weight: 100;}
+@mixin light-2 {font-weight: 200;}
+
+.none {@include none;}
+.clear {clear: both;}
+
+// Color variables
+$white: #fff;
+$black: #010103;
+$ccc: #ccc;
+
+// Basic
+$primary: #3d70a5;
+$secondary: #7bc277;
+$header: #363636;
+$oil: #333;
+$smoke: #eee;
+$filter: #d05050;
+$jet: #363636;
+$column: #F2F2F2;
+$bg_lodge: #FCFCFC;
+$border: #d3d3d3;
+
+// Alerts
+$good: #3BA656;
+$bad: #D05050;
+$alert: #f2d84b;
+$red: $bad;
+
+// Function to make a custom button, don't necessary in this case
+@mixin basic-button($bg-color:$primary-color, $text-color: $white, $size: 14, $padding: 35) {
+    background: $bg-color;
+    color: $text-color;
+    font-size: rem-calc($size);
+    box-shadow: inset 0 -2px 0 darken($bg-color, 20%);
+    padding: rem-calc(11) rem-calc($padding) rem-calc(12);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+    &:hover {
+        background: darken($bg-color, 5%);
+        box-shadow: inset 0 -2px 0 darken($bg-color, 20%);
+    }
+}
+
+// Button's
+.button.more, .button.mail {
+    @include light-2;
+    font-weight: normal;
+    background: rgba($good, 0.5);
+    border: 1px solid $good;
+    color: darken($white, 10%);
+    &:hover {
+        color: $white;
+        background: darken($good, 5%);
+        box-shadow: 0 1px 2px rgba($black, 0.5);
+    }
+}
+
+#header {
+    background: $black;
+    border-bottom: 4px solid $white;
+    height: 200px;
+}
+
+#content {
+    background: $black url(../img/background.jpg);
+    background-size: cover;
+}
+
+// Small screen
+@media only screen and (max-width: 40em) {
+}
+// Medium screen
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+}
+
