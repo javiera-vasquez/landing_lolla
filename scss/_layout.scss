@@ -19,8 +19,8 @@ $black: #010103;
 $ccc: #ccc;
 
 // Basic
-$primary: #3d70a5;
-$secondary: #7bc277;
+$primary: #3fc3b9;
+$secondary: #ef4526;
 $header: #363636;
 $oil: #333;
 $smoke: #eee;
@@ -51,30 +51,69 @@ $red: $bad;
 }
 
 // Button's
-.button.more, .button.mail {
-    @include light-2;
+.button{
+    // @include light-2;
     font-weight: normal;
-    background: rgba($good, 0.5);
-    border: 1px solid $good;
-    color: darken($white, 10%);
+    // padding: 1em 2em;
+    background: rgba($black, 0.8);
+    border: none;
+    color: $white;
     &:hover {
         color: $white;
-        background: darken($good, 5%);
-        box-shadow: 0 1px 2px rgba($black, 0.5);
+        background: $secondary;
+        // box-shadow: 0 1px 2px darken($primary-color, 10%);
     }
+}
+
+.button.active {
+    background: rgba($secondary, 0.9);
 }
 
 #header {
     background: $black;
     border-bottom: 4px solid $white;
-    height: 200px;
+    padding: 2em 0;
+    img {
+        max-width: 75%;
+        margin-bottom: 0.75em;
+    }
+    p {
+        color: $white;
+        margin-left: 10px;
+        margin-bottom: 0;
+    }
+    div:nth-child(2) {
+        text-align: right;
+        margin-top: 2em;
+    }
 }
 
 #content {
     background: $black url(../img/background.jpg);
     background-size: cover;
+    padding-top: 2em;
 }
 
+#player {
+    margin-bottom: 2em;
+    .margin {
+        padding: 0.5em;
+        background-color: $primary-color;
+    }
+    .flex-video {margin-bottom: 0;}
+    .canalSelector {
+        text-align: center;
+        margin-bottom: 0;
+        color: $white;
+        font-size: rem-calc(20);
+        .button {
+            @include bold;
+            padding: 0.75em 2em;
+            margin-bottom: 0.5em;
+        }
+        span {margin: 0 1em;}
+    }
+}
 // Small screen
 @media only screen and (max-width: 40em) {
 }
