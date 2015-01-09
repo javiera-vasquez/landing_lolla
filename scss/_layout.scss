@@ -5,7 +5,7 @@
 @mixin none {display: none;}
 @mixin block {display: block;}
 
-@mixin bold {font-weight: bold;}
+@mixin bold {font-weight: 600;}
 @mixin normal {font-weight: normal;}
 @mixin light {font-weight: 100;}
 @mixin light-2 {font-weight: 200;}
@@ -35,6 +35,10 @@ $good: #3BA656;
 $bad: #D05050;
 $alert: #f2d84b;
 $red: $bad;
+
+// Import type from google font
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:600,400");
+body {font-family: 'Open Sans', sans-serif;}
 
 // Function to make a custom button, don't necessary in this case
 @mixin basic-button($bg-color:$primary-color, $text-color: $white, $size: 14, $padding: 35) {
@@ -69,6 +73,18 @@ $red: $bad;
     background: rgba($secondary, 0.9);
 }
 
+.button.social {
+    background: darken($primary, 6%);
+    border: 1px solid darken($primary, 10%);
+    width: 100%;
+    padding: 0.75em 2em;
+    margin-bottom: 0;
+    &:hover {
+        background: $secondary;
+        border-color: darken($secondary, 10%);
+    }
+}
+
 #header {
     background: $black;
     border-bottom: 4px solid $white;
@@ -89,17 +105,30 @@ $red: $bad;
 }
 
 #content {
-    background: $black url(../img/background.jpg);
+    background: $black url(../img/background.jpg) top fixed;
     background-size: cover;
     padding-top: 2em;
 }
 
-#player {
-    margin-bottom: 2em;
+#player, #program, #share {
+    padding-bottom: 2em;
     .margin {
         padding: 0.5em;
-        background-color: $primary-color;
+        background-color: $primary;
+        box-shadow: 0 1px 1px rgba($black, 0.5);
     }
+    .title-sector {
+        font-size: rem-calc(18);
+        color: $white;
+        margin-bottom: 0.75em;
+    }
+}
+
+#program, #share {
+    .margin {padding: 0.75em;}
+}
+
+#player {
     .flex-video {margin-bottom: 0;}
     .canalSelector {
         text-align: center;
@@ -114,6 +143,58 @@ $red: $bad;
         span {margin: 0 1em;}
     }
 }
+
+#program {
+    ul {
+        background: darken($primary, 3%);
+        border: 1px solid darken($primary, 12%);
+        margin-left: 0;
+        &:last-child {margin-bottom: 0;}
+        li {
+            border-right: 1px solid darken($primary, 10%);
+            text-align: center;
+            color: $white;
+            width: 14.28571428571429%;
+            padding: 0.75em 0.5em;
+            margin-left: 0;
+            p {
+                margin: 0;
+                &:first-child {
+                    text-transform: uppercase;
+                }
+            }
+            .time-hour {
+                font-size: rem-calc(12);
+            }
+            &:last-child {
+                border-right: none;
+            }
+            &:nth-child(even) {
+                background: darken($primary, 6%);
+            }
+            &:hover {
+                background-color: $secondary;
+                cursor: pointer;
+            }
+        }
+        .header {
+            background-color: rgba($black, 0.8);
+            p {
+                position: relative;
+                top: 25%;
+            }
+            &:hover {
+                cursor: pointer;
+                background-color: $secondary;
+            }
+        }
+    }
+}
+
+#share {
+    padding-bottom: 5em;
+}
+
 // Small screen
 @media only screen and (max-width: 40em) {
 }
