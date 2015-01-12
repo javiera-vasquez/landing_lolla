@@ -320,5 +320,9 @@ body {
 }
 // Medium screen
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+    .button.social {
+        font-size: rem-calc(14);
+        padding: 0.75em 1.25em
+    }
 }
 
