@@ -95,33 +95,33 @@ $total-columns: 12;
 // $font-weight-normal: normal !default;
 // $font-weight-bold: bold !default;
 
-// $white       : #FFFFFF;
-// $ghost       : #FAFAFA;
-// $snow        : #F9F9F9;
-// $vapor       : #F6F6F6;
-// $white-smoke : #F5F5F5;
-// $silver      : #EFEFEF;
-// $smoke       : #EEEEEE;
-// $gainsboro   : #DDDDDD;
-// $iron        : #CCCCCC;
-// $base        : #AAAAAA;
-// $aluminum    : #999999;
-// $jumbo       : #888888;
-// $monsoon     : #777777;
-// $steel       : #666666;
-// $charcoal    : #555555;
-// $tuatara     : #444444;
-// $oil         : #333333;
-// $jet         : #222222;
-// $black       : #000000;
+$white       : #FFFFFF;
+$ghost       : #FAFAFA;
+$snow        : #F9F9F9;
+$vapor       : #F6F6F6;
+$white-smoke : #F5F5F5;
+$silver      : #EFEFEF;
+$smoke       : #EEEEEE;
+$gainsboro   : #DDDDDD;
+$iron        : #CCCCCC;
+$base        : #AAAAAA;
+$aluminum    : #999999;
+$jumbo       : #888888;
+$monsoon     : #777777;
+$steel       : #666666;
+$charcoal    : #555555;
+$tuatara     : #444444;
+$oil         : #333333;
+$jet         : #222222;
+$black       : #000000;
 
 // We use these as default colors throughout
 $primary-color: #3fc3b9;
 $secondary-color: #ef4526;
-// $alert-color: #f04124;
-// $success-color: #43AC6A;
-// $warning-color: #f08a24;
-// $info-color: #a0d3e8;
+$alert-color: #f04124;
+$success-color: #43AC6A;
+$warning-color: #f08a24;
+$info-color: #a0d3e8;
 
 // We use these to control various global styles
 // $body-bg: $white;
@@ -439,7 +439,7 @@ $global-radius: 5px;
 // $button-font-med: rem-calc(16);
 // $button-font-lrg: rem-calc(20);
 // $button-font-weight: $font-weight-normal;
-// $button-font-align: center;
+// $button-966lign: center;
 
 // We use these to control various hover effects.
 // $button-function-factor: -20%;
@@ -1336,15 +1336,15 @@ $global-radius: 5px;
 
 // $include-html-tooltip-classes: $include-html-classes;
 
-// $has-tip-border-bottom: dotted 1px $iron;
+$has-tip-border-bottom: none;
 // $has-tip-font-weight: $font-weight-bold;
 // $has-tip-font-color: $oil;
-// $has-tip-border-bottom-hover: dotted 1px scale-color($primary-color, $lightness: -55%);
+$has-tip-border-bottom-hover: none;
 // $has-tip-font-color-hover: $primary-color;
 // $has-tip-cursor-type: help;
 
 // $tooltip-padding: rem-calc(12);
-// $tooltip-bg: $oil;
+$tooltip-bg: $black;
 // $tooltip-font-size: rem-calc(14);
 // $tooltip-font-weight: $font-weight-normal;
 // $tooltip-font-color: $white;
@@ -1356,7 +1356,7 @@ $global-radius: 5px;
 // $tooltip-radius: $global-radius;
 // $tooltip-rounded: $global-rounded;
 // $tooltip-pip-size: 5px;
-// $tooltip-max-width: 300px;
+$tooltip-max-width: 410px;
 
 // 34. Top Bar
 // - - - - - - - - - - - - - - - - - - - - - - - - -

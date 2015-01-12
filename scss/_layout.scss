@@ -38,7 +38,10 @@ $red: $bad;
 
 // Import type from google font
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:600,400");
-body {font-family: 'Open Sans', sans-serif;}
+body {
+    font-family: 'Open Sans', sans-serif;
+    // letter-spacing: rem-calc(1);
+}
 
 // Function to make a custom button, don't necessary in this case
 @mixin basic-button($bg-color:$primary-color, $text-color: $white, $size: 14, $padding: 35) {
@@ -74,6 +77,7 @@ body {font-family: 'Open Sans', sans-serif;}
 }
 
 .button.social {
+    @include bold;
     background: darken($primary, 6%);
     border: 1px solid darken($primary, 10%);
     width: 100%;
@@ -97,6 +101,7 @@ body {font-family: 'Open Sans', sans-serif;}
         color: $white;
         margin-left: 10px;
         margin-bottom: 0;
+        letter-spacing: rem-calc(3);
     }
     div:nth-child(2) {
         text-align: right;
@@ -191,8 +196,44 @@ body {font-family: 'Open Sans', sans-serif;}
     }
 }
 
+.tooltip {
+    height: 125px;
+    div {
+        position: relative;
+        margin-top: -105px;
+        left: 110px;
+        width: 280px;
+        font-family: 'Open Sans', sans-serif;
+    }
+    h3 {
+        width: 190px;
+        text-transform: uppercase;
+        color: $white;
+        font-size: rem-calc(16);
+        margin-bottom: 0;
+    }
+    p {
+        width: 190px;
+        color: rgba($white, 0.8);
+        font-size: rem-calc(14);
+        margin-bottom: 0;
+    }
+}
+
 #share {
     padding-bottom: 5em;
+    a {line-height: 18px;}
+    .sprite{
+        display: inline-block;
+        background-image:url(../img/social.png);
+        background-repeat: no-repeat;
+        width: 18px;
+        height: 18px;
+    }
+    .sprite.facebook {background-position: 0 0;}
+    .sprite.twitter {background-position: 0 -45px;}
+    .sprite.tumblr {background-position: 0 -91px;}
+    .sprite.pinterest {background-position: 0 -136px;}
 }
 
 // Small screen
