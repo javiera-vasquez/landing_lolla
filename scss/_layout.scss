@@ -15,7 +15,7 @@
 
 // Color variables
 $white: #fff;
-$black: #010103;
+$black: #000;
 $ccc: #ccc;
 
 // Basic
@@ -38,9 +38,16 @@ $red: $bad;
 
 // Import type from google font
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:600,400");
-body {
+
+body{
+    min-width: 320px;
     font-family: 'Open Sans', sans-serif;
     // letter-spacing: rem-calc(1);
+}
+
+h1, h2, h3, h4, h5 {
+    @include bold;
+    font-family: 'Open Sans', sans-serif;
 }
 
 // Function to make a custom button, don't necessary in this case
@@ -116,16 +123,21 @@ body {
 }
 
 #player, #program, #share {
-    padding-bottom: 2em;
+    padding-bottom: 3em;
     .margin {
         padding: 0.5em;
         background-color: $primary;
         box-shadow: 0 1px 1px rgba($black, 0.5);
     }
-    .title-sector {
-        font-size: rem-calc(18);
+    .title-sector, .title-sector-2 {
+        font-size: rem-calc(22);
         color: $white;
-        margin-bottom: 0.75em;
+        margin-bottom: 1em;
+        text-align: center;
+    }
+    .title-sector-2 {
+        font-size: rem-calc(18);
+        margin-top: -1em;
     }
 }
 
@@ -149,80 +161,86 @@ body {
     }
 }
 
-#program {
-    ul {
-        background: darken($primary, 3%);
-        border: 1px solid darken($primary, 12%);
-        margin-left: 0;
-        li {
-            position: relative;
-            border-right: 1px solid darken($primary, 10%);
-            text-align: center;
-            color: $white;
-            width: 14.28571428571429%;
-            padding: 0 0.5em;
-            margin-left: 0;
-            p {
-                padding: 0.75em 0 0;
-                margin: 0;
-                &:first-child {
-                    text-transform: uppercase;
-                }
-            }
-            .time-hour {
-                font-size: rem-calc(12);
-                padding: 0 0 0.75em;
-            }
-            &:last-child {
-                border-right: none;
-            }
-            &:nth-child(even) {
-                background: darken($primary, 6%);
-            }
-            &:hover {
-                background-color: $secondary;
-                cursor: pointer;
-            }
-        }
-        .header {
-            background-color: rgba($black, 0.8);
-            p {
-                position: relative;
-                top: 15%;
-            }
-            &:hover {
-                cursor: pointer;
-                background-color: $secondary;
-            }
-        }
+// loop musician
+.bg-content-loop {
+    background: $black;
+    border: 5px solid $secondary;
+    .row.medium-collapse {
+        margin: 0;
     }
-    .last {margin-bottom: 0;}
 }
 
-.tooltip {
-    height: 125px;
-    div {
-        position: relative;
-        margin-top: -105px;
-        left: 110px;
-        width: 280px;
-        font-family: 'Open Sans', sans-serif;
-    }
-    h3 {
-        width: 190px;
-        text-transform: uppercase;
-        color: $white;
-        font-size: rem-calc(16);
-        margin-bottom: 0;
-    }
+.bg-header {
+    color: $white;
+    text-align: center;
+    padding: 1em;
     p {
-        width: 190px;
-        color: rgba($white, 0.8);
-        font-size: rem-calc(14);
-        margin-bottom: 0;
+        border-bottom: 1px solid $white;
+        font-size: rem-calc(18);
+        margin: 0 0 .75em;
+        padding-bottom: .75em;
+        line-height: 1;
+        strong  {
+            font-size: rem-calc(24);
+        }
+        &:last-child {border-bottom: none;}
     }
 }
 
+.loop-musician {
+    margin: 0;
+    padding: 0;
+    li {
+        @include left;
+        position: relative;
+        width: 20%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border: 5px solid $secondary;
+        border-top: none;
+        border-right: none;
+        img {width: 100%;}
+        span {
+            @include none;
+            z-index: 99999;
+            color: $white;
+            font-size: rem-calc(14);
+            text-shadow: 0 2px 4px rgba($black, .75);
+            text-align: center;
+            position: absolute;
+            width: 50%;
+            top: 35%;
+            left: 25%;
+        }
+        &:nth-child(n+6) {border-bottom: none;}
+        &:hover {
+            span {@include block;}
+            img {
+                -webkit-filter: opacity(.75);
+                filter: opacity(.75);
+            }
+        }
+    }
+    .more {
+        img {opacity: .80;}
+        &:hover {
+            img {
+                opacity: 1;
+                -webkit-filter: opacity(1) contrast(2);
+                filter: opacity(1) contrast(2);
+            }
+        }
+    }
+}
+
+.disclaimer {
+    color: rgba($white, .75);
+    font-size: rem-calc(11);
+    margin: 0.5em 0.5em 0;
+}
+
+// Social buttons
 #share {
     padding-bottom: 5em;
     a {line-height: 18px;}
@@ -233,55 +251,11 @@ body {
         width: 18px;
         height: 18px;
     }
-    .sprite.facebook {background-position: 0 0;}
-    .sprite.twitter {background-position: 0 -45px;}
-    .sprite.tumblr {background-position: 0 -91px;}
-    .sprite.pinterest {background-position: 0 -136px;}
+    .sprite.facebook {background-position: 0 3px;}
+    .sprite.twitter {background-position: 0 -49px;}
+    .sprite.insta {background-position: 0 -100px;}
 }
 
-.ribbon-wrapper {
-    width: 85px;
-    height: 88px;
-    overflow: hidden;
-    position: absolute;
-    top: -5px;
-    right: 0;
-}
-
-.ribbon {
-    font-size: rem-calc(11);
-    color: $white;
-    text-align: center;
-    -webkit-transform: rotate(45deg);
-    -moz-transform:    rotate(45deg);
-    -ms-transform:     rotate(45deg);
-    -o-transform:      rotate(45deg);
-    position: relative;
-    padding: 2px 0;
-    left: 15px;
-    top: 15px;
-    width: 100px;
-    background-color: $black;
-    -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
-    -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
-    box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
-}
-
-.ribbon:before, .ribbon:after {
-    content: "";
-    border-top:   3px solid #6e8900;
-    border-left:  3px solid transparent;
-    border-right: 3px solid transparent;
-    position:absolute;
-    bottom: -3px;
-}
-
-// .ribbon:before {
-//     left: 0;
-// }
-// .ribbon:after {
-//     right: 0;
-// }​
 
 // Small screen
 @media only screen and (max-width: 40em) {
@@ -301,21 +275,21 @@ body {
         margin-bottom: 1em;
         font-size: rem-calc(14);
     }
-    .inline-list>li {float: none;}
-    #program ul li {width: 100%;}
-    #program ul .header p {
-        padding-bottom: 1em;
-    }
-    .ribbon-wrapper {
-        top: 0;
-        right: -2px;
-    }
     #player .canalSelector  {
         .button, span {font-size: rem-calc(14); }
         .button {padding: 0.75em 1.25em;}
     }
-    .tooltip.has-tip {
-        @include none;
+    .bg-content-loop {
+        h4, h5 {
+            color: $white;
+            text-align: center;
+            // margin-bottom: 0em;
+        }
+        h5 {font-size: rem-calc(13);}
+    }
+    .loop-musician li {
+        width: 25%;
+        border: none;
     }
 }
 // Medium screen
@@ -324,5 +298,136 @@ body {
         font-size: rem-calc(14);
         padding: 0.75em 1.25em
     }
+    .bg-header {
+        padding: .75em;
+        p {
+            strong {font-size: rem-calc(18);}
+            font-size: rem-calc(12);
+            padding-bottom: .5em;
+        }
+    }
+    .bg-content-loop {
+        .small-12 {padding: 0;}
+    }
 }
+
+
+// Deprecated
+// #program {
+//     ul {
+//         background: darken($primary, 3%);
+//         border: 1px solid darken($primary, 12%);
+//         margin-left: 0;
+//         li {
+//             position: relative;
+//             border-right: 1px solid darken($primary, 10%);
+//             text-align: center;
+//             color: $white;
+//             width: 14.28571428571429%;
+//             padding: 0 0.5em;
+//             margin-left: 0;
+//             p {
+//                 padding: 0.75em 0 0;
+//                 margin: 0;
+//                 &:first-child {
+//                     text-transform: uppercase;
+//                 }
+//             }
+//             .time-hour {
+//                 font-size: rem-calc(12);
+//                 padding: 0 0 0.75em;
+//             }
+//             &:last-child {
+//                 border-right: none;
+//             }
+//             &:nth-child(even) {
+//                 background: darken($primary, 6%);
+//             }
+//             &:hover {
+//                 background-color: $secondary;
+//                 cursor: pointer;
+//             }
+//         }
+//         .header {
+//             background-color: rgba($black, 0.8);
+//             p {
+//                 position: relative;
+//                 top: 15%;
+//             }
+//             &:hover {
+//                 cursor: pointer;
+//                 background-color: $secondary;
+//             }
+//         }
+//     }
+//     .last {margin-bottom: 0;}
+// }
+
+// .tooltip {
+//     height: 125px;
+//     div {
+//         position: relative;
+//         margin-top: -105px;
+//         left: 110px;
+//         width: 280px;
+//         font-family: 'Open Sans', sans-serif;
+//     }
+//     h3 {
+//         width: 190px;
+//         text-transform: uppercase;
+//         color: $white;
+//         font-size: rem-calc(16);
+//         margin-bottom: 0;
+//     }
+//     p {
+//         width: 190px;
+//         color: rgba($white, 0.8);
+//         font-size: rem-calc(14);
+//         margin-bottom: 0;
+//     }
+// }
+
+// .ribbon-wrapper {
+//     width: 85px;
+//     height: 88px;
+//     overflow: hidden;
+//     position: absolute;
+//     top: -5px;
+//     right: 0;
+// }
+
+// .ribbon {
+//     font-size: rem-calc(11);
+//     color: $white;
+//     text-align: center;
+//     -webkit-transform: rotate(45deg);
+//     -moz-transform:    rotate(45deg);
+//     -ms-transform:     rotate(45deg);
+//     -o-transform:      rotate(45deg);
+//     position: relative;
+//     padding: 2px 0;
+//     left: 15px;
+//     top: 15px;
+//     width: 100px;
+//     background-color: $black;
+//     -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+//     -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+//     box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+// }
+
+// .ribbon:before, .ribbon:after {
+//     content: "";
+//     border-top:   3px solid #6e8900;
+//     border-left:  3px solid transparent;
+//     border-right: 3px solid transparent;
+//     position:absolute;
+//     bottom: -3px;
+// }
+
+// .ribbon:before {
+//     left: 0;
+// }
+// .ribbon:after {
+//     right: 0;
+// }​
 
