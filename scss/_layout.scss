@@ -278,6 +278,7 @@ h1, h2, h3, h4, h5 {
             }
         }
     }
+    .cover.none {@include none;}
     .cover.error .error {@include block;}
     .cover.outside .outside {@include block;}
     .cover.end-day-one .end-day-one {@include block;}
