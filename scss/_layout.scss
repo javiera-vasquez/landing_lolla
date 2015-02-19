@@ -42,6 +42,7 @@ $red: $bad;
 body{
     min-width: 320px;
     font-family: 'Open Sans', sans-serif;
+    background-color: $black;
     // letter-spacing: rem-calc(1);
 }
 
@@ -283,6 +284,60 @@ h1, h2, h3, h4, h5 {
     .cover.outside .outside {@include block;}
     .cover.end-day-one .end-day-one {@include block;}
     .cover.end-day-two .end-day-two {@include block;}
+}
+
+// Footer
+footer {
+    border-top: 5px solid $white;
+    background-color: $black;
+    padding: 1em 0 3em;
+    p {
+        font-size: rem-calc(13);
+        margin-bottom: 0;
+        color: rgba($white, .5);
+    }
+}
+
+// Legal.html
+#legal {padding-bottom: 3em;}
+
+.tabs.vertical {
+    width: 100%;
+    max-width: 100%;
+}
+
+.tabs.vertical dd, .tabs.vertical .tab-title {
+    padding-bottom: 20px;
+}
+
+.tabs dd>a, .tabs .tab-title>a {
+    padding: 1em;
+    font-size: rem-calc(13);
+    background-color: $white;
+    border-radius: 5px;
+    line-height: 1.3;
+}
+
+.tabs dd.active a, .tabs .tab-title.active a {
+    background-color: $primary;
+    color: $white;
+}
+
+.tabs-content {
+    background-color: $white;
+    box-shadow: 0 1px 1px rgba($black, 0.5);
+    padding: 2em;
+    h2 {
+        color: $primary;
+    }
+    p, h4 {
+        margin-left: 1em;
+        color: #5e5e5e;
+    }
+    p {
+        color: #777;
+        font-size: rem-calc(14);
+    }
 }
 
 // Small screen
