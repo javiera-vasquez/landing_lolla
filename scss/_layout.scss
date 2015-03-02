@@ -340,6 +340,17 @@ footer {
     }
 }
 
+// Soon
+#soon {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 20%;
+    p {
+        margin: 0;
+        padding: 0 20px;
+    }
+}
+
 // Small screen
 @media only screen and (max-width: 40em) {
     #header {
@@ -375,6 +386,12 @@ footer {
         border: none;
     }
     .flex-video .cover h3 {font-size: rem-calc(16);}
+    #player .canalSelector .button {
+        padding: 0.5em;
+    }
+    #program .title-sector, #program .title-sector-2, #share .title-sector {
+        font-size: rem-calc(16);
+    }
 }
 // Medium screen
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
@@ -392,6 +409,9 @@ footer {
     }
     .bg-content-loop {
         .small-12 {padding: 0;}
+    }
+    .flex-video .cover h3{
+        font-size: rem-calc(20);
     }
 }
 
