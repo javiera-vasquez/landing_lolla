@@ -387,7 +387,12 @@ footer {
     }
     .flex-video .cover h3 {font-size: rem-calc(16);}
     #player .canalSelector .button {
-        padding: 0.5em;
+        padding: .5em;
+        font-size: rem-calc(14);
+    }
+    #player .canalSelector span {
+        margin: 0 .5em;
+        font-size: rem-calc(11);
     }
     #program .title-sector, #program .title-sector-2, #share .title-sector {
         font-size: rem-calc(16);
@@ -412,13 +417,6 @@ footer {
     }
     .flex-video .cover h3{
         font-size: rem-calc(20);
-    }
-}
-
-// Large screens
-@media only screen and (min-width: 64.063em) and (max-width: 90em) {
-    body {
-        min-width: 960px;
     }
 }
 
