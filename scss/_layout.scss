@@ -415,6 +415,12 @@ footer {
     }
 }
 
+// Large screens
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+    body {
+        min-width: 960px;
+    }
+}
 
 // Deprecated
 // #program {
