@@ -301,42 +301,48 @@ footer {
 // Legal.html
 #legal {padding-bottom: 3em;}
 
-.tabs.vertical {
-    width: 100%;
-    max-width: 100%;
-}
-
-.tabs.vertical dd, .tabs.vertical .tab-title {
-    padding-bottom: 20px;
-}
-
 .tabs dd>a, .tabs .tab-title>a {
     padding: 1em;
-    font-size: rem-calc(13);
-    background-color: $white;
-    border-radius: 5px;
+    font-size: rem-calc(15);
+    background-color: $primary;
+    color: $white;
     line-height: 1.3;
+    &:hover {
+        background-color: $secondary;
+    }
 }
 
 .tabs dd.active a, .tabs .tab-title.active a {
-    background-color: $primary;
-    color: $white;
+    background-color: $white;
 }
 
 .tabs-content {
     background-color: $white;
     box-shadow: 0 1px 1px rgba($black, 0.5);
     padding: 2em;
-    h2 {
+    h1 {
         color: $primary;
     }
-    p, h4 {
+    h3 {
         margin-left: 1em;
         color: #5e5e5e;
+        small {
+            position: absolute;
+            margin-left: -30px;
+            margin-top: 20px;
+        }
     }
     p {
         color: #777;
+        margin-left: 2em;
         font-size: rem-calc(14);
+    }
+    ul {
+        margin-left: 3em;
+        li {
+            color: #777;
+            font-size: rem-calc(14);
+        }
     }
 }
 
@@ -396,6 +402,26 @@ footer {
     }
     #program .title-sector, #program .title-sector-2, #share .title-sector {
         font-size: rem-calc(16);
+    }
+    .tabs {
+        border-bottom: 1px solid #ccc;
+    }
+    .tab-title {
+        width: 100%;
+    }
+    .tabs dd>a, .tabs .tab-title>a {
+        font-size: rem-calc(14);
+        width: 100%;
+        background-color: $white;
+        color: #444;
+        &:hover {
+            background-color: $secondary;
+            color: $white;
+        }
+    }
+    .tabs dd.active a, .tabs .tab-title.active a {
+        background-color: $primary-color;
+        color: $white;
     }
 }
 // Medium screen
